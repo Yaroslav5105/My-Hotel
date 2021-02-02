@@ -10,10 +10,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Hotel
-
 {
     public class Startup
     {
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -53,5 +53,6 @@ namespace Hotel
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
+
     }
 }

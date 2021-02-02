@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
+#nullable disable
+
 namespace Hotel.Models
 {
     public class UserContext : DbContext

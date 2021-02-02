@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
+
 namespace Hotel.ViewModels
 {
     public class LoginModel
@@ -11,4 +12,5 @@ namespace Hotel.ViewModels
         [DataType(DataType.Password)]
         public string Password { get; set; }
     }
+
 }
