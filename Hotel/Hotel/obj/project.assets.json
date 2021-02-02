@@ -5804,11 +5804,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ADMIN-PC\\OneDrive\\Рабочий стол\\Hotel\\Hotel\\Hotel.csproj",
+      "projectUniqueName": "C:\\Users\\ADMIN-PC\\Desktop\\My-Hotel\\Hotel\\Hotel\\Hotel.csproj",
       "projectName": "Hotel",
-      "projectPath": "C:\\Users\\ADMIN-PC\\OneDrive\\Рабочий стол\\Hotel\\Hotel\\Hotel.csproj",
+      "projectPath": "C:\\Users\\ADMIN-PC\\Desktop\\My-Hotel\\Hotel\\Hotel\\Hotel.csproj",
       "packagesPath": "C:\\Users\\ADMIN-PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ADMIN-PC\\OneDrive\\Рабочий стол\\Hotel\\Hotel\\obj\\",
+      "outputPath": "C:\\Users\\ADMIN-PC\\Desktop\\My-Hotel\\Hotel\\Hotel\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ADMIN-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",

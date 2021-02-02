@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 
-namespace AuthApp.Controllers
+namespace Hotel.Controllers
 {
     public class HomeController : Controller
     {
