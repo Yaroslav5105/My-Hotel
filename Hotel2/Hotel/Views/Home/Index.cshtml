@@ -1,0 +1,12 @@
+﻿@model HomeViewModel
+
+<h1>Востребованые комнаты</h1>
+
+<div class="row mt-5 mb-2">
+    @{
+        foreach (room room in Model.favRoom)
+        {
+            @Html.Partial("AllRooms", room)
+        }
+    }
+</div>
