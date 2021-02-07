@@ -1,0 +1,13 @@
+﻿@model HotelRoomViewModel
+<div class="container mt-5" >
+
+   @foreach(var el in Model.HotelRoom.listHotelItem)
+   {
+       <div class="alert alert-warning mt-3">
+           <b>Комнаты:</b> @el.room.name<bt />
+           <b>Цена :</b> @el.room.price грн
+       </div> 
+   }
+    <hr/>
+    <a class="btn btn-danger" asp-controller="Order" asp-action="checkout">Оплатить</a>
+</div>

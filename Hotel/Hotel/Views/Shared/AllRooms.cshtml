@@ -1,0 +1,10 @@
+﻿@model room
+
+<div class="col-lg-4">
+    <img class="img-thumbnail" src="@Model.img" alt="Model.name" />
+    <h2>@Model.name</h2>
+    <p>@Model.shortDesc</p>
+    <p>@Model.LongDEsc</p>
+    <p>Цена : @Model.price грн </p>
+    <p><a class="btn btn-primary" asp-controller="HotelRoom" asp-action="AddToRoom" asp-route-id="@Model.id">Добавить в корзину</a></p>
+</div>

@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=DESKTOP-J1IDGB3\\SQLEXPRESS;Database=Hotel;Trusted_Connection=True;MultipleActiveResultSets=true"
+  }
+}
