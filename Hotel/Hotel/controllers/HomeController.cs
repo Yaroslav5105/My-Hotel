@@ -1,5 +1,6 @@
 ﻿using Hotel.interfaces;
 using Hotel.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,11 @@ namespace Hotel.controllers
             favRoom = _RoomRep.getFavrooms
             };
             return View(homeRooms);
+        }
+        [Authorize]
+        public IActionResult index()
+        {
+            return Content(User.Identity.Name);
         }
     }
 }
