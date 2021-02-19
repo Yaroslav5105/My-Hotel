@@ -30,13 +30,24 @@ namespace Hotel.Data.Models
         }
         public void AddToRoom(room room)
         {
-            appDBContent.HotelRoomItem.Add(new HotelRoomItem {
+            appDBContent.HotelRoomItem.Add(new HotelRoomItem
+            {
                 HotelRoomId = HotelRoomId,
                 room = room,
                 price = room.price
             });
             appDBContent.SaveChanges();
         }
+        public void Remove(room room)
+        {
+           HotelRoomItem hotelRoomItem = appDBContent.HotelRoomItem.FirstOrDefault(p => p.HotelRoomId == HotelRoomId && p.room == room);
+            if (hotelRoomItem != null)
+            {
+                appDBContent.HotelRoomItem.Remove(hotelRoomItem);
+                appDBContent.SaveChanges(); 
+            }
+        }
+
         public List<HotelRoomItem> getHotelItems()
         {
             return appDBContent.HotelRoomItem.Where(c => c.HotelRoomId == HotelRoomId).Include(s => s.room).ToList();

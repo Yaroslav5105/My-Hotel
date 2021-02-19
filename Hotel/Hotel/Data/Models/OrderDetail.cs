@@ -13,7 +13,6 @@ namespace Hotel.Data.Models
         public int price { get; set; }
         public virtual room room { get; set; }
         public virtual Order order { get; set; }
-       
-        
+
     }
 }

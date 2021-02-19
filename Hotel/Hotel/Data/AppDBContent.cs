@@ -12,11 +12,13 @@ namespace Hotel.Data
       
         }
 
-        public DbSet<room> Room { get; set; }
+        public DbSet<room> Room { get; set; }        
+        public DbSet<User> User { get; set; }
         public DbSet<category> Category { get; set; }
         public DbSet<HotelRoomItem> HotelRoomItem { get; set; }
         public DbSet<Order> Order { get; set; }
         public DbSet<OrderDetail> OrderDetail { get; set; }
+        
 
     }
 }

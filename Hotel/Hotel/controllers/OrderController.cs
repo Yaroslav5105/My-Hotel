@@ -1,5 +1,6 @@
 ﻿using Hotel.Data.interfaces;
 using Hotel.Data.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace Hotel.controllers
             this.allOrders = allOrders;
             this.hotelRoom = hotelRoom;
         }
+        [Authorize]
         public IActionResult Checkout()
         {
             return View();

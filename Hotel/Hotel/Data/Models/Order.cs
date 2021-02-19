@@ -22,7 +22,7 @@ namespace Hotel.Data.Models
         [Required(ErrorMessage = "длина Фамилию не больше 25 символов")]
         public string surname { get; set; }
 
-        [Display(Name = "Адрес")]
+        [Display(Name = "дата Вьезда")]
         [StringLength(35)]
         [Required(ErrorMessage = "длина Адрес не больше 35 символов")]
         public string adress { get; set; }
@@ -43,8 +43,5 @@ namespace Hotel.Data.Models
         [ScaffoldColumn(false)]
         public DateTime orderTime { get; set; }
         public List<OrderDetail> orderDetails { get; set; }
-
-
-
     }
 }

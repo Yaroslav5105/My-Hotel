@@ -34,6 +34,7 @@ namespace Hotel.Data.Repository
 
                 };
                 appDBContent.OrderDetail.Add(orderDetail);
+                appDBContent.HotelRoomItem.Remove(el);
             }
             appDBContent.SaveChanges();
         }

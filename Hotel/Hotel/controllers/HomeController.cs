@@ -18,17 +18,15 @@ namespace Hotel.controllers
         {
             _RoomRep = RoomRep;  
         }
+        [Authorize]
         public ViewResult Index()
         {
-            var homeRooms = new HomeViewModel {
-            favRoom = _RoomRep.getFavrooms
+            var homeRooms = new HomeViewModel
+            {
+                favRoom = _RoomRep.getFavrooms
             };
             return View(homeRooms);
         }
-        [Authorize]
-        public IActionResult index()
-        {
-            return Content(User.Identity.Name);
-        }
+
     }
 }

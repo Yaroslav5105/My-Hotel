@@ -3,10 +3,14 @@
 
    @foreach(var el in Model.HotelRoom.listHotelItem)
    {
-       <div class="alert alert-warning mt-3">
-           <b>Комнаты:</b> @el.room.name<bt />
-           <b>Цена :</b> @el.room.price грн
-       </div> 
+    <div class="alert alert-warning mt-3">
+        <b>Комнаты:</b> @el.room.name<bt />
+        <b>Цена :</b> @el.room.price грн
+        <a asp-action="Delete"
+           asp-controller="HotelRoom"
+           asp-route-id="@el.room.id"
+           class="btn btn-primary m-1">Удалить</a>
+    </div> 
    }
     <hr/>
     <a class="btn btn-danger" asp-controller="Order" asp-action="checkout">Оплатить</a>

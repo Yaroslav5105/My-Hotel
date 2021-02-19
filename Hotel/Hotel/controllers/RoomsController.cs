@@ -1,6 +1,7 @@
 ﻿using Hotel.Data.Models;
 using Hotel.interfaces;
 using Hotel.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace Hotel.controllers
             _allRooms = iAllRooms;
             _allcategories = iRoomCat ;
         }
-
+        [Authorize]
         [Route("rooms/List")]
         [Route("rooms/List/{category}")]
         public ViewResult List(string category)

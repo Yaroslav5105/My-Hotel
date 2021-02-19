@@ -7,15 +7,17 @@ using Hotel.ViewModels; // пространство имен моделей Regi
 using Hotel.Models; // пространство имен UserContext и класса User
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Hotel.Data;
+using Hotel.Data.Models;
 
 namespace Hotel.Controllers
 {
     public class AccountController : Controller
     {
-        private UserContext db;
-        public AccountController(UserContext context)
+        private AppDBContent appDBContent;
+        public AccountController(AppDBContent appDBContent)
         {
-            db = context;
+            this.appDBContent = appDBContent;
         }
         [HttpGet]
         public IActionResult Login()
@@ -28,7 +30,7 @@ namespace Hotel.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = await db.Users.FirstOrDefaultAsync(u => u.Email == model.Email && u.Password == model.Password);
+                User user = await appDBContent.User.FirstOrDefaultAsync(u => u.Email == model.Email && u.Password == model.Password);
                 if (user != null)
                 {
                     await Authenticate(model.Email); // аутентификация
@@ -50,16 +52,16 @@ namespace Hotel.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = await db.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
+                User user = await appDBContent.User.FirstOrDefaultAsync(u => u.Email == model.Email);
                 if (user == null)
                 {
                     // добавляем пользователя в бд
-                    db.Users.Add(new User { Email = model.Email, Password = model.Password });
-                    await db.SaveChangesAsync();
+                    appDBContent.User.Add(new User { Email = model.Email, Password = model.Password });
+                    await appDBContent.SaveChangesAsync();
 
                     await Authenticate(model.Email); // аутентификация
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index");
                 }
                 else
                     ModelState.AddModelError("", "Некорректные логин и(или) пароль");

@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
+using System.Security.Claims;
 namespace Hotel.Data.Models
 {
     public class room
@@ -17,6 +14,11 @@ namespace Hotel.Data.Models
         public bool available { set; get; }
         public int categoryID { set; get; }
         public virtual category Category { set; get; }
+       
+        public static implicit operator room(ClaimsPrincipal t)
+        {
+            throw new NotImplementedException();
+        }
 
     }
 }
